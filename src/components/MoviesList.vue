@@ -18,7 +18,7 @@
             >
             <button
               class="btn btn-danger btn-sm btn-block"
-              @click="deleteOne(movie.id)"
+              @click="deleteMovie(movie.id)"
             >
               Delete
             </button>
@@ -33,7 +33,7 @@
 import moment from "moment";
 export default {
   name: "MoviesList",
-  props: ["movies", "deleteOne"],
+  props: ["movies", "deleteMovie"],
   methods: {
     formatedDate: function (date) {
       return moment(date).format("MMMM Do YYYY, [at] h:mm:ss a");

@@ -7,7 +7,7 @@
           <div>
             <MoviesForm :addMovie="addMovie"></MoviesForm>
           </div>
-          <MoviesList :movies="movies" :deleteMovie="deleteOne"></MoviesList>
+          <MoviesList :movies="movies" :deleteMovie="deleteMovie"></MoviesList>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ export default {
       this.movies.push(movie);
       localStorage.setItem("@movies", JSON.stringify(this.movies));
     },
-    deleteOne: function (id) {
+    deleteMovie: function (id) {
       console.log(id);
       this.movies = this.movies.filter((movie) => movie.id !== id);
       localStorage.setItem("@movies", JSON.stringify(this.movies));
